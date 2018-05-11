@@ -17,7 +17,6 @@ Player.prototype.rollRandom=function ()
 Player.prototype.pass=function ()
 {
   return this.tScore+=this.score;
-  this.tScore= 0;
 }
 
 Player.prototype.caseOfOne=function ()
@@ -57,6 +56,7 @@ $(document).ready(function ()
     $("#roll1").click(function(event)
     {
       event.preventDefault();
+      $("#rollP1").show();
       playerI.face=playerI.rollRandom();
       console.log(playerI.face);
       $("#rollP1").text("You just rolled a: "+playerI.face);
@@ -66,12 +66,14 @@ $(document).ready(function ()
 
     $("#pass1").click(function (event) {
       event.preventDefault();
-      $(".playerIResult").text("Your total score is: "+playerI.pass());
+      $("#rollP1").hide();
+      $("#totalP1").text("Your total score is: "+playerI.pass());
     });
 
     $("#roll2").click(function(event)
     {
       event.preventDefault();
+      $("#rollP2").show();
       playerII.face=playerII.rollRandom();
       console.log(playerII.face);
       $("#rollP2").text("You just rolled a: "+playerII.face);
@@ -81,7 +83,8 @@ $(document).ready(function ()
     });
     $("#pass2").click(function (event) {
       event.preventDefault();
-      $(".playerIIResult").text("Your total score is: "+playerII.pass());
+      $("#rollP2").hide();
+      $("#totalP2").text("Your total score is: "+playerII.pass());
     });
 
   });
