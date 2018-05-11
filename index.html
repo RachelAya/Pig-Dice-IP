@@ -11,31 +11,33 @@
 
 <body>
   <div class="container">
-    <div class="jumbotron">
-    <h1>Pig Dice</h1>
+    <div class="jumbotron text-center">
+      <h1>Pig Dice</h1>
     </div>
-    <div class="row">
+    <div class="row" style="background-color:coral">
       <div class="col-md-6" id="p1">
-        <h2>Player I</h2>
-      <div class="form-group" id="formI">
-        <input type="text" id="playerI-name" placeholder="Enter your name">
-        <button type="submit" class="btn" id="b1">Play!</button>
-      </div>
-      <p id="pNameI"></p>
-      <button class="btn btn-primary" id="roll1">Roll</button>    <button class="btn btn-primary" id="pass1">Pass</button>
-      <div class="playerIResult">
-      </div>
-      </div>
-      <div class="col-md-6" id="p2">
-       <h2>Player II</h2>
-       <div class="form-group" id="formII">
-         <input type="text" id="playerII-name" placeholder="Enter your name">
-         <button type="submit" class="btn" id="b2">Play!</button>
-       </div>
-       <p id="pNameII"></p>
-       <button class="btn btn-primary" id="roll2">Roll</button>    <button class="btn btn-primary" id="pass2">Pass</button>
-       <div  class="playerIIResult">
-       </div>
+        <form id="pigDice">
+          <h2>Player I</h2>
+          <div class="form-group" id="formI">
+            <input type="text" id="playerI-name" placeholder="Enter your name">
+            <button type="submit" class="btn" id="b1">Play!</button>
+          </div>
+          <p id="pNameI"></p>
+          <button class="btn btn-primary" id="roll1">Roll</button>    <button class="btn btn-primary" id="pass1">Pass</button>
+          <div class="playerIResult">
+          </div>
+        </div>
+        <div class="col-md-6" id="p2">
+          <h2>Player II</h2>
+          <div class="form-group" id="formII">
+            <input type="text" id="playerII-name" placeholder="Enter your name">
+            <button type="submit" class="btn" id="b2">Play!</button>
+          </div>
+          <p id="pNameII"></p>
+          <button class="btn btn-primary" id="roll2">Roll</button>    <button class="btn btn-primary" id="pass2">Pass</button>
+        </form>
+        <div  class="playerIIResult">
+        </div>
       </div>
     </div>
   </div>
