@@ -1,3 +1,20 @@
+.jumbotron
+{
+  background-color: #F0FFFF;
+}
+#header {
+     font-family: 'Tangerine', serif;
+     font-size: 80px;
+     text-shadow: 4px 4px 4px #aaa;
+   }
+#p1
+{
+  background-color:#7FFFD4;
+}
+#p2
+{
+  background-color: #00BFFF;
+}
 #pNameI
 {
   font-size: 25px;
@@ -5,6 +22,22 @@
 #pNameII
 {
   font-size: 25px;
+}
+#roll1
+{
+  float: left;
+}
+#pass1
+{
+  float: right;
+}
+#roll2
+{
+  float: left;
+}
+#pass2
+{
+  float: right;
 }
 .playerIResult
 {
