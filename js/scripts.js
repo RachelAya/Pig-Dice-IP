@@ -59,8 +59,8 @@ $(document).ready(function ()
       event.preventDefault();
       playerI.face=playerI.rollRandom();
       console.log(playerI.face);
-      $(".playerIResult").text("You just rolled a: "+playerI.face);
-      $(".playerIResult").append("Your current score is: "+playerI.caseOfOne());
+      $("#rollP1").text("You just rolled a: "+playerI.face);
+      $("#totalP1").text("Your current score is: "+playerI.caseOfOne());
 
     });
 
@@ -74,8 +74,8 @@ $(document).ready(function ()
       event.preventDefault();
       playerII.face=playerII.rollRandom();
       console.log(playerII.face);
-      $(".playerIIResult").text("You just rolled a: "+playerII.face);
-      $(".playerIIResult").append("Your current score is: "+playerII.caseOfOne());
+      $("#rollP2").text("You just rolled a: "+playerII.face);
+      $("#totalP2").text("Your current score is: "+playerII.caseOfOne());
 
 
     });
