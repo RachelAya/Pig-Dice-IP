@@ -6,7 +6,7 @@ function Player(name)
   this.name=name;
   this.score=0;
   this.face=0;
-  this.total=0;
+  this.tScore=0;
 }
 Player.prototype.rollRandom=function ()
 {
@@ -14,8 +14,19 @@ Player.prototype.rollRandom=function ()
 }
 Player.prototype.pass=function ()
 {
-   return this.score=+this.face;
+   return this.score+=this.face;
 }
+Player.prototype.caseOfOne=function ()
+{
+  if(this.face===1)
+  {
+    return  this.score=0;
+  }
+  else
+  {
+    return  this.score+=this.face;
+  }
+};
 //UI logic
 $(document).ready(function ()
 {
@@ -42,30 +53,23 @@ $(document).ready(function ()
       event.preventDefault();
       playerI.face=playerI.rollRandom();
       console.log(playerI.face);
-      if (playerI.face===1)
-      {
-        playerI.score=playerI.pass();
-        $(".playerIResult").text("It is not your turn anymore.");
-        $(".playerIResult").text("Your current score is"+playerI.score);
-      }
-      else
-      {
-        $(".playerIResult").text(playerI.face);
-      }
+      $(".playerIResult").text("You just rolled a: "+playerI.face);
+      $(".playerIResult").text("Your current score is: "+playerI.caseOfOne());
     });
+
+    $("#pass1").click(function (event) {
+      event.preventDefault();
+      playerI.tScore= playerI.pass();
+      $(".playerIResult").text("Your total score is: "+playerI.tScore);
+    });
+
     $("#roll2").click(function(event)
     {
       event.preventDefault();
       playerII.face=playerII.rollRandom();
       console.log(playerII.face);
-      if (playerII.face===1)
-      {
-        $(".playerIIResult").text("It is not your turn anymore.");
-      }
-      else
-      {
-        $(".playerIIResult").text(playerII.face);
-      }
+      $(".playerIIResult").text("You just rolled a: "+playerII.face);
+      $(".playerIIResult").text("Your current score is: "+playerII.caseOfOne());
 
     });
 
