@@ -8,14 +8,18 @@ function Player(name)
   this.face=0;
   this.tScore=0;
 }
+
 Player.prototype.rollRandom=function ()
 {
   return Math.floor((Math.random()*6)+1);
 }
+
 Player.prototype.pass=function ()
 {
-   return this.score+=this.face;
+  return this.tScore+=this.score;
+  this.tScore= 0;
 }
+
 Player.prototype.caseOfOne=function ()
 {
   if(this.face===1)
@@ -27,6 +31,8 @@ Player.prototype.caseOfOne=function ()
     return  this.score+=this.face;
   }
 };
+
+
 //UI logic
 $(document).ready(function ()
 {
@@ -54,13 +60,13 @@ $(document).ready(function ()
       playerI.face=playerI.rollRandom();
       console.log(playerI.face);
       $(".playerIResult").text("You just rolled a: "+playerI.face);
-      $(".playerIResult").text("Your current score is: "+playerI.caseOfOne());
+      $(".playerIResult").append("Your current score is: "+playerI.caseOfOne());
+
     });
 
     $("#pass1").click(function (event) {
       event.preventDefault();
-      playerI.tScore= playerI.pass();
-      $(".playerIResult").text("Your total score is: "+playerI.tScore);
+      $(".playerIResult").text("Your total score is: "+playerI.pass());
     });
 
     $("#roll2").click(function(event)
@@ -69,10 +75,14 @@ $(document).ready(function ()
       playerII.face=playerII.rollRandom();
       console.log(playerII.face);
       $(".playerIIResult").text("You just rolled a: "+playerII.face);
-      $(".playerIIResult").text("Your current score is: "+playerII.caseOfOne());
+      $(".playerIIResult").append("Your current score is: "+playerII.caseOfOne());
+
 
     });
-
+    $("#pass2").click(function (event) {
+      event.preventDefault();
+      $(".playerIIResult").text("Your total score is: "+playerII.pass());
+    });
 
   });
 });
