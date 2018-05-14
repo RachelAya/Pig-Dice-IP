@@ -23,15 +23,24 @@ Player.prototype.caseOfOne=function ()
 {
   if(this.face===1)
   {
+      this.pass();
+    $("#roll1").toggle();
+    alert("You rolled a one. It is not your turn any more!");
     return  this.score=0;
+
   }
   else
   {
     return  this.score+=this.face;
   }
 };
-
-
+Player.prototype.win = function ()
+{
+ if (this.tScore===0)
+ {
+  return alert(this.player.name+ " is the winner!")
+ }
+}
 //UI logic
 $(document).ready(function ()
 {
