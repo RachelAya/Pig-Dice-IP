@@ -1,20 +1,34 @@
-.jumbotron
+.container-fluid
 {
-  background-color: #F0FFFF;
+   background-image: url(https://images.unsplash.com/photo-1510778670743-06254c768dad?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e2d5289ca0151c0745e2ffd7f0688b72&auto=format&fit=crop&w=1837&q=80);
+   background-size: cover;
+   padding: 10%;
+}
+body
+{
+  color: white;
+}
+p
+{
+  font-size: 18px;
+}
+.btn
+{
+  color: black;
 }
 #header {
      font-family: 'Tangerine', serif;
      font-size: 80px;
      text-shadow: 4px 4px 4px #aaa;
    }
-#p1
+/* #p1
 {
   background-color:#7FFFD4;
 }
 #p2
 {
   background-color: #00BFFF;
-}
+} */
 #pNameI
 {
   font-size: 25px;
