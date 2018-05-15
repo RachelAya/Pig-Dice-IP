@@ -36,7 +36,7 @@ Player.prototype.caseOfOne=function ()
 };
 Player.prototype.win = function ()
 {
- if (this.tScore===0)
+ if (this.tScore===100)
  {
   return alert(this.player.name+ " is the winner!")
  }
